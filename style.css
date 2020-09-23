@@ -129,7 +129,7 @@ header {
   display: none;
 }
 
-@media (max-width: 787px) {
+@media (max-width: 768px) {
   .container {
     max-width: 600px;
     margin: 0 auto;
@@ -150,13 +150,15 @@ header {
     text-align: center;
     margin: 25px 0;
   }
-  .header .home-icon {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    background-color: #e8e4da;
-    font-size: 22px;
-    line-height: 48px;
+  .header .header-nav-sp img {
+    width: 48px;
+    height: 47px;
+  }
+  .header .header-nav-sp a {
+    margin-left: 25px;
+  }
+  .header .header-nav-sp a:first-child {
+    margin-left: 0;
   }
   .header .header-left,
   .header .header-right {
@@ -174,7 +176,7 @@ header {
           justify-content: space-between;
 }
 
-@media (max-width: 787px) {
+@media (max-width: 768px) {
   .top {
     display: block;
   }
@@ -219,7 +221,7 @@ article {
   margin: 20px 0 30px 0;
 }
 
-@media (max-width: 787px) {
+@media (max-width: 768px) {
   article {
     width: 100%;
   }
@@ -360,7 +362,7 @@ aside {
   float: right;
 }
 
-@media (max-width: 787px) {
+@media (max-width: 768px) {
   aside {
     width: 100%;
   }
@@ -416,6 +418,13 @@ aside {
   background-color: #887f69;
 }
 
+.about .about-title img,
+.about .shop-info-title img,
+.shop-info .about-title img,
+.shop-info .shop-info-title img {
+  vertical-align: middle;
+}
+
 .about .left,
 .shop-info .left {
   padding: 12px;
@@ -439,7 +448,7 @@ aside {
   text-align: center;
 }
 
-@media (max-width: 787px) {
+@media (max-width: 768px) {
   .about,
   .shop-info {
     padding-bottom: 6px;
