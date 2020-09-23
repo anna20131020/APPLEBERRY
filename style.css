@@ -10,6 +10,7 @@ a {
 body {
   font-family: ヒラギノ角ゴ Pro;
   background-color: #f9f8f6;
+  letter-spacing: 0.05em;
 }
 
 .container {
@@ -17,6 +18,7 @@ body {
   margin: 0 auto;
 }
 
+/*--------------トップバナー-------------*/
 /*左右の矢印の色を変える*/
 .slick-prev:before,
 .slick-next:before {
@@ -46,7 +48,10 @@ img {
   height: auto;
 }
 
-/*--------------トップバナー-------------*/
+.slick-slide {
+  width: 100%;
+}
+
 .slide-dots {
   text-align: left;
 }
@@ -80,25 +85,27 @@ img {
   content: "";
 }
 
-.slide-dots li :first-child {
-  margin-left: 0;
-}
-
 /*-------------header--------------*/
 header {
   padding: 39px 0;
 }
 
 .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .header-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-left: auto;
 }
 
 .header-right .header-nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
@@ -126,6 +133,10 @@ header {
   .container {
     max-width: 600px;
     margin: 0 auto;
+    padding: 0 20px;
+  }
+  header {
+    padding: 29px 0 0 0;
   }
   .header {
     display: block;
@@ -140,6 +151,8 @@ header {
     margin: 25px 0;
   }
   .header .home-icon {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
     background-color: #e8e4da;
     font-size: 22px;
@@ -153,8 +166,18 @@ header {
 
 /*------top-------------------------------*/
 .top {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media (max-width: 787px) {
+  .top {
+    display: block;
+  }
 }
 
 /*--------------article---------------------*/
@@ -162,14 +185,27 @@ article {
   width: 700px;
 }
 
+.news-title-sp {
+  display: none;
+}
+
 .card {
+  display: -ms-grid;
   display: grid;
-  gap: 27px;
-  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2px;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
   margin-top: 32px;
-  background-color: #ffff;
-  padding: 15px;
   margin-bottom: 30px;
+}
+
+.card .item {
+  padding: 17px 14px;
+  background-color: #ffff;
+}
+
+.card img {
+  width: 100%;
 }
 
 .card .text,
@@ -183,14 +219,48 @@ article {
   margin: 20px 0 30px 0;
 }
 
+@media (max-width: 787px) {
+  article {
+    width: 100%;
+  }
+  article .news-title {
+    display: none;
+  }
+  article .news-title-sp {
+    display: block;
+    text-align: center;
+  }
+  article .news-title-sp img {
+    width: 193px;
+    height: 24px;
+  }
+  article .card {
+    display: -ms-grid;
+    display: grid;
+    gap: 2px;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+  }
+  article .card .text,
+  article .card .price {
+    font-size: 22px;
+    line-height: 27.24px;
+    margin-top: 10px;
+  }
+  article .card .price {
+    margin: 20px 0 30px 0;
+  }
+}
+
 .shopping {
   margin-bottom: 60px;
 }
 
 .shopping .guide {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: 30px;
-  height: 264px;
 }
 
 .shopping .guide-left {
@@ -203,7 +273,7 @@ article {
   width: 50%;
   margin-left: 5px;
   background-color: #ffff;
-  padding: 16px 0 0 20px;
+  padding: 16px 0 22px 20px;
 }
 
 .shopping .guide h2 {
@@ -239,7 +309,7 @@ article {
 }
 
 .shopping .guide .card-title {
-  margin-bottom: 10px;
+  margin-bottom: 6px;
 }
 
 /*---------------------aside----------------*/
@@ -249,33 +319,51 @@ aside {
 
 .search {
   width: 100%;
-  padding: 14px;
+  padding: 20px;
   background-color: #ffff;
   margin-bottom: 10px;
 }
 
-.search p {
-  font-size: 12px;
-  font-weight: bold;
-  line-height: 24px;
-  color: #887f69;
+.search .item-search {
+  margin-bottom: 12px;
 }
 
 .search .search-text {
   font-size: 11px;
   line-height: 18px;
-  letter-spacing: 0.5;
   padding: 6.5px;
   background-color: #eeeeee;
   width: 100%;
 }
 
+.search .search-text ::-webkit-input-placeholder {
+  font-style: oblique;
+  letter-spacing: 0.05em;
+}
+
+.search .search-text :-ms-input-placeholder {
+  font-style: oblique;
+  letter-spacing: 0.05em;
+}
+
+.search .search-text ::-ms-input-placeholder {
+  font-style: oblique;
+  letter-spacing: 0.05em;
+}
+
 .search .search-text ::placeholder {
   font-style: oblique;
+  letter-spacing: 0.05em;
 }
 
 .search .search-btn {
   float: right;
+}
+
+@media (max-width: 787px) {
+  aside {
+    width: 100%;
+  }
 }
 
 /*---------ページリンク、 カテゴリ------------*/
@@ -320,40 +408,84 @@ aside {
   margin-bottom: 10px;
 }
 
-.about div,
-.shop-info div {
+.about .about-title,
+.about .shop-info-title,
+.shop-info .about-title,
+.shop-info .shop-info-title {
   padding: 17px 15px;
   background-color: #887f69;
 }
 
-.about .about-img,
-.about .shop-info-img,
-.shop-info .about-img,
-.shop-info .shop-info-img {
+.about .left,
+.shop-info .left {
   padding: 12px;
 }
 
-.about p,
-.shop-info p {
-  padding: 12px;
+.about .right,
+.shop-info .right {
+  padding: 0 12px;
   font-size: 12px;
   line-height: 18px;
+}
+
+.about .right p,
+.shop-info .right p {
+  margin-bottom: 20px;
   letter-spacing: 0.5;
 }
 
-.about a,
-.shop-info a {
+.about .right .more,
+.shop-info .right .more {
   text-align: center;
-  background-color: #887f69;
-  padding: 10px 32px;
-  border-radius: 999px;
-  font-size: 12px;
-  font-family: Avenir Next;
-  font-weight: bold;
-  color: #fff;
-  width: 100px;
-  display: block;
-  margin: 0 auto;
+}
+
+@media (max-width: 787px) {
+  .about,
+  .shop-info {
+    padding-bottom: 6px;
+  }
+  .about .about-wrapper,
+  .about .shop-info-wrapper,
+  .shop-info .about-wrapper,
+  .shop-info .shop-info-wrapper {
+    padding: 24px 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .about .about-wrapper .left,
+  .about .shop-info-wrapper .left,
+  .shop-info .about-wrapper .left,
+  .shop-info .shop-info-wrapper .left {
+    width: 50%;
+  }
+  .about .about-wrapper .left img,
+  .about .shop-info-wrapper .left img,
+  .shop-info .about-wrapper .left img,
+  .shop-info .shop-info-wrapper .left img {
+    padding: 0;
+    height: 164px;
+  }
+  .about .about-wrapper .right,
+  .about .shop-info-wrapper .right,
+  .shop-info .about-wrapper .right,
+  .shop-info .shop-info-wrapper .right {
+    width: 50%;
+  }
+  .about .about-wrapper .right p,
+  .about .shop-info-wrapper .right p,
+  .shop-info .about-wrapper .right p,
+  .shop-info .shop-info-wrapper .right p {
+    padding: 0 24px;
+    font-size: 24px;
+    line-height: 36px;
+  }
+  .about .about-wrapper .right a,
+  .about .shop-info-wrapper .right a,
+  .shop-info .about-wrapper .right a,
+  .shop-info .shop-info-wrapper .right a {
+    margin-top: 29px;
+  }
 }
 
 /*--------------footer-------*/
@@ -363,8 +495,12 @@ footer {
 
 footer .footer {
   margin: 35px 0 30px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 footer .footer a {
@@ -401,3 +537,4 @@ footer .copyright {
   text-decoration: none;
   padding: 20px 20px;
 }
+/*# sourceMappingURL=style.css.map */

@@ -11,12 +11,15 @@ a {
 body {
   font-family: ヒラギノ角ゴ Pro;
   background-color: #f9f8f6;
+  letter-spacing: 0.05em;
 }
 
 .container {
   max-width: 940px;
   margin: 0 auto;
 }
+
+/*--------------トップバナー-------------*/
 
 /*左右の矢印の色を変える*/
 .slick-prev:before,
@@ -47,7 +50,10 @@ img {
   height: auto;
 }
 
-/*--------------トップバナー-------------*/
+.slick-slide {
+  width: 100%;
+}
+
 
 .slide-dots {
   text-align: left;
@@ -73,6 +79,7 @@ img {
       }
     }
 
+
     &.slick-active {
       button:before {
         height: 2px;
@@ -84,9 +91,6 @@ img {
   }
 }
 
-.slide-dots li :first-child {
-  margin-left: 0;
-}
 
 /*-------------header--------------*/
 
@@ -132,6 +136,11 @@ header {
   .container {
     max-width: 600px;
     margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  header {
+    padding: 29px 0 0 0;
   }
 
   .header {
@@ -169,20 +178,37 @@ header {
   justify-content: space-between;
 }
 
+@media (max-width:787px) {
+  .top {
+    display: block;
+  }
+}
+
 /*--------------article---------------------*/
 
 article {
   width: 700px;
 }
 
+.news-title-sp {
+  display: none;
+}
+
 .card {
   display: grid;
-  gap: 27px;
+  gap: 2px;
   grid-template-columns: 1fr 1fr 1fr;
   margin-top: 32px;
-  background-color: #ffff;
-  padding: 15px;
   margin-bottom: 30px;
+
+  .item {
+    padding: 17px 14px;
+    background-color: #ffff;
+  }
+
+  img {
+    width: 100%;
+  }
 
   .text,
   .price {
@@ -196,13 +222,50 @@ article {
   }
 }
 
+
+@media (max-width:787px) {
+  article {
+    width: 100%;
+
+    .news-title {
+      display: none;
+    }
+
+    .news-title-sp {
+      display: block;
+      text-align: center;
+      img {
+        width: 193px;
+        height: 24px;
+      }
+    }
+
+    .card {
+      display: grid;
+      gap: 2px;
+      grid-template-columns: 1fr 1fr;
+
+      .text,
+      .price {
+        font-size: 22px;
+        line-height: 27.24px;
+        margin-top: 10px;
+      }
+
+      .price {
+        margin: 20px 0 30px 0;
+      }
+    }
+
+  }
+}
+
 .shopping {
   margin-bottom: 60px;
 
   .guide {
     display: flex;
     margin-top: 30px;
-    height: 264px;
 
     &-left {
       width: 50%;
@@ -214,7 +277,7 @@ article {
       width: 50%;
       margin-left: 5px;
       background-color: #ffff;
-      padding: 16px 0 0 20px;
+      padding: 16px 0 22px 20px;
     }
 
     h2 {
@@ -250,7 +313,7 @@ article {
     }
 
     .card-title {
-      margin-bottom: 10px;
+      margin-bottom: 6px;
 
     }
   }
@@ -264,32 +327,35 @@ aside {
 
 .search {
   width: 100%;
-  padding: 14px;
+  padding: 20px;
   background-color: #ffff;
   margin-bottom: 10px;
 
-  p {
-    font-size: 12px;
-    font-weight: bold;
-    line-height: 24px;
-    color: #887f69;
+  .item-search {
+    margin-bottom: 12px;
   }
 
   .search-text {
     font-size: 11px;
     line-height: 18px;
-    letter-spacing: 0.5;
     padding: 6.5px;
     background-color: #eeeeee;
     width: 100%;
 
     ::placeholder {
       font-style: oblique;
+      letter-spacing: 0.05em;
     }
   }
 
   .search-btn {
     float: right;
+  }
+}
+
+@media (max-width:787px) {
+  aside {
+    width: 100%;
   }
 }
 
@@ -335,35 +401,66 @@ aside {
   padding: 0 0 21px 0;
   margin-bottom: 10px;
 
-  div {
+  .about-title,
+  .shop-info-title {
     padding: 17px 15px;
     background-color: #887f69;
   }
 
-  .about-img,
-  .shop-info-img {
+  .left {
     padding: 12px;
   }
 
-  p {
-    padding: 12px;
+  .right {
+    padding: 0 12px;
     font-size: 12px;
     line-height: 18px;
-    letter-spacing: 0.5;
-  }
 
-  a {
-    text-align: center;
-    background-color: #887f69;
-    padding: 10px 32px;
-    border-radius: 999px;
-    font-size: 12px;
-    font-family: Avenir Next;
-    font-weight: bold;
-    color: #fff;
-    width: 100px;
-    display: block;
-    margin: 0 auto;
+    p {
+      margin-bottom: 20px;
+      letter-spacing: 0.5;
+    }
+
+    .more{
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width:787px) {
+
+  .about,
+  .shop-info {
+    padding-bottom: 6px;
+
+    .about-wrapper,
+    .shop-info-wrapper {
+      padding: 24px 20px;
+      display: flex;
+
+      .left {
+        width: 50%;
+
+        img {
+          padding: 0;
+          height: 164px;
+        }
+      }
+
+      .right {
+        width: 50%;
+
+        p {
+          padding: 0 24px;
+          font-size: 24px;
+          line-height: 36px;
+        }
+
+        a {
+          margin-top: 29px;
+        }
+      }
+    }
   }
 }
 
@@ -400,6 +497,7 @@ footer {
 #page_top a:hover {
   text-decoration: none;
 }
+
 #page_top {
   position: fixed;
   bottom: 258px;
